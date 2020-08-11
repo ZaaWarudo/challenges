@@ -1,9 +1,14 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
-int tax(int *x)
+double tax(int *x)
 {
-    int z;
-    z=40+(*x)*5+((40+(*x)*5)*(1/5));
+    double z;
+    double j;
+
+    j=40+(*x)*5;
+    j+=j*0.1;
+    z=j;
     return z;
 }
 int main()
@@ -11,6 +16,6 @@ int main()
 
     cout<<"Enter no. additional colors to buy : ";
     cin>>x;
-    cout<<"yor total was : "<<tax(&x);
+    cout<<"your total was : "<<round(tax(&x));
     return 0;
 }
