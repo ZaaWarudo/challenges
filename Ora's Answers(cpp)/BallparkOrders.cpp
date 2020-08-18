@@ -37,6 +37,6 @@ int main()
 	}
 	tot += tot *0.07;
 	std::cout << "Your total was: " << tot<<std::endl;
-	std::cout <<"" orders << std::endl;
+	std::cout << "here are your orders: "<< orders << std::endl;
 	return 0;
 }
