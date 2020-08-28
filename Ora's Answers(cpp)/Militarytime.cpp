@@ -8,38 +8,43 @@
 #define logstr(x) std::getline(std::cin,x)
 int main()
 {
-	std::string time,M;
+	std::string time, M;
 	int hr;
-	int min;
+	int min = 0;;
+	int len;
+	int i = 1;
 	log("Enter the time: ");
 	logstr(time);
-	std::stringstream ss;
-	ss << time;
-	std::string time_;
-	
-	for (int i=1;i <= 4;i++)
+	len = time.length();
+	time[len - 3] = ':';
+	std::stringstream ss(time);
+	std::stringstream sss;
+	std::string time_,time__;
+	while (std::getline(ss, time_, ':'))
 	{
-		ss >> time_;
 		switch (i)
 		{
 		case 1:
 			std::stringstream(time_) >> hr;
 			break;
-		case 3:
+		case 2:
 			std::stringstream(time_) >> min;
 			break;
-		case 4:
+		case 3:
 			std::stringstream(time_) >> M;
 			break;
 		}
+		i++;
+		time_ = "";
 	}
 	if (M == "PM")
-	{
-		hr += 12;
-	}
-	log("The military time is: ");
-	log(hr);
-	log(':');
-	log(min);
+		{
+			hr += 12;
+		}
+		log("The military time is: ");
+		log(hr);
+		log(":");
+		log(min);
+	
 	return 0;
 }
