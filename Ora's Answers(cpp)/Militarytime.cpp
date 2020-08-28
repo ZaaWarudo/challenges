@@ -19,7 +19,7 @@ int main()
 	time[len - 3] = ':';
 	std::stringstream ss(time);
 	std::stringstream sss;
-	std::string time_,time__;
+	std::string time_;
 	while (std::getline(ss, time_, ':'))
 	{
 		switch (i)
